@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="meio2">
+        <form action="javascript:alert('Este Formulário está aprovado para o envio!')">
+
+            <p>Inscrição para a Universidade!</p>
+      
+            <p>Seus dados pessoais:</p>
+      
+            <label for="nome">Seu Nome</label>
+            <input type="text" name="nome" id="nome" pattern="[A-Za-z0-9]{4,20}" placeholder="Seu nome aqui">
+      
+            <label for="tel">Telefone</label>
+            <input type="tel" name="tel" id="tel" minlength="14" maxlength="15" placeholder="Seu Telefone aqui  Ex: (XX) XXXXX-XXXX">
+      
+            <label for="cpf">CPF*</label>
+            <input type="text" name="cpf"  id="cpf"  required minlength="14" maxlength="14" placeholder="Seu CPF aqui  Ex: XXX.XXX.XXX-XX"><!--required-->
+      
+            <label>Seu Gênero:</label>
+            <label for="gen">Masculino
+              <input type="radio" name="gen" id="masc" value="masc">
+            </label>
+      
+            <label for="gen">Feminino
+              <input type="radio" name="gen" id="fem" value="fem">
+            </label>
+      
+            <label for="gen">Outro
+              <input type="radio" name="gen" id="out" value="out">
+            </label>
+      
+            <label for="email">Seu E-mail*:</label>
+            <input type="email" name="email" id="email" required placeholder="Seu E-mail aqui  Ex: email@.com">
+      
+            <label for="pwd">Senha</label>
+            <input type="password" name="pwd" id="pwd" pattern="(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$"><!--required-->
+      
+            <label for="pwd2">Confirmar senha</label>
+            <input type="password" name="pwd2" id="pwd2">
+      
+            <label>Intolerância a Lactose?</label>
+            <label for="lac">Sim
+              <input type="radio" name="lac" id="lac" value="lac">
+            </label>
+      
+            <label for="lac">Não
+              <input type="radio" name="lac" id="lac" value="lac">
+            </label>
+      
+            <p>Familiares:</p>
+      
+            <label for="pais">Pais e/ou Responsáveis:</label>
+            <input type="text" name="pais" id="pais">
+      
+      
+            <label for="nasc">Data De Nascimento</label>
+            <input type="date" name="nasc" id="nasc">
+            <label for="idade">Idade</label>
+            <input type="text" name="idade" id="idade" disabled>
+      
+            <label for="Cor">Cor Preferida</label>
+            <input type="color" name="color" id="color">
+      
+            <label for="lic">
+              Aceito os<br>
+              Termos de Uso e a<br>
+              Política de privacidade
+            </label>
+            <input type="checkbox" name="lic" id="lic">
+      
+            <input type="submit" value="Enviar">
+                 
+      
+          </form>
+
+          <script>
+            tel = document.getElementById(tel)
+      
+            tel.addEventListener('invalid', function(){
+        if(tel.value == ""){
+            tel.setCustomValidity("É necessário Telefone para contato!");
+        } else {
+          tel.setCustomValidity("");
+        }
+      }
+      )
+        </script>
+    </div>
+
+    <a href="index.html">
+        <p>voltar</p>
+    </a>
+    
+</body>
+</html>

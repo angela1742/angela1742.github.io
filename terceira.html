@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="concerto">
+    <div class="rosto">
+        <div class="olhos">
+                <div class="olho"></div>  
+                <div class="olho"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('body').addEventListener('mousemove', eyeball);
+        function eyeball()
+        {
+           var olho = document.querySelectorAll('.olho');
+           olho.forEach(function(olho)
+
+           {
+            //getBoudingClientRect = retorna o tamanho de um elemento e sua posição relativa ao viewport
+                let x = (olho.getBoundingClientRect().left) + (olho.clientWidth / 2);
+                let y = (olho.getBoundingClientRect().top) + (olho.clientHeight / 2);
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                let rot = (radian * (180 / Math.PI) * -1) + 270;
+                olho.style.transform = "rotate("+ rot+"deg)";
+           })
+
+        }
+    </script>
+
+<a href="index.html">
+    <p>voltar</p>
+</a>
+</body>
+</html>

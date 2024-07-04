@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper"><h1>Gerador Tabuada</h1>
+        <label>Valor Tabuada</label>
+        <input type="number" id="valor" value="1">
+        <button type="button" id="cria-tab">Gerar</button>
+        <button type="button" id="cria-toda">Gerar 2 a 9</button>
+        <div id="result-wrapper"></div>
+        </div>
+
+        <script>
+           function tab(ntab){ //monta a tabuada solicitada;
+    let multi = 2;    //multiplicando da tabuada;
+    let tabuada = ""  //conteúdo da tabuada;
+    while (multi <= 9){
+        //tabuada = tabuada + (ntab + " x " + multi + " = " + ntab*multi + "<br>");
+        tabuada = tabuada + 
+              ("<tr><td>"+ntab+"</td><td>x</td><td>"+               
+                  multi+"</td><td>=</td><td>"+               
+                  ntab*multi+"</td></tr>");
+        multi++;
+    }
+    //return tabuada + "<br>";
+    return tabuada + "<br>";
+}
+
+
+
+function criaDivTab(ntab){
+    let htmltab = tab(ntab);
+    let tabdiv = document.createElement("div");
+    tabdiv.className= "result-tab";
+    tabdiv.id = "result-tab-" + ntab;
+    tabdiv.innerHTML = htmltab;
+    document.getElementById("result-wrapper").appendChild(tabdiv);
+}
+function criatab(){
+    let ntab = document.getElementById("valor").value;
+  criaDivTab(ntab); 
+ }
+   
+
+function criaTodas(){
+    document.getElementById("result-wrapper").innerHTML="";
+    let n = 2;
+    while(n <= 9) {
+        criaDivTab(n);
+        n++;
+    }
+}
+
+document.getElementById("cria-tab").addEventListener("click", criatab);
+document.getElementById("cria-toda").addEventListener("click", criaTodas);
+
+
+
+ 
+        </script>
+
+<a href="index.html">
+    <p>voltar</p>
+</a>
+</body>
+</html>

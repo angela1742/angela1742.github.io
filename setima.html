@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script" defer></script>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Supefície e volume</h1>
+<label for="area">area:</label>
+<input type="number" name="area" id="area">
+<label for="raio">raio:</label>
+<input type="number" name="raio" id="raio">
+<label for="volume">volume:</label>
+<input type="number" name="volume" id="volume">
+
+    <script>
+        function sev (){
+  let raio = document.getElementById("raio").value;
+  
+  let area = 4*3.14*raio*raio;     
+document.getElementById("area").value = area;
+  
+ console.log(area);
+  
+  let volume = (4/3)*3.14*raio*raio*raio;
+document.getElementById("volume").value = volume;
+  
+  console.log(volume);
+  
+  
+}
+document.getElementById("raio").addEventListener("change",sev);
+
+  
+    </script>
+</body>
+<a href="index.html">
+    <p>voltar</p>
+</a>
+</html>
